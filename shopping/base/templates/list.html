@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<!-- <style>
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+ 
+</style> -->
+
+
+{% for product in products %}
+<div class="container">
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{product.image.url}}">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">{{product.price}} rs</p>
+    <p class="card-text">{{product.description}}</p>
+    <p>Size Available</p>
+    {% if product.Small == True %}
+    <p>S</p>
+    {% endif %}
+    {% if product.Medium == True %}
+    <p>M</p>
+    {% endif %}
+    {% if product.Large == True %}
+    <p>L</p>
+    {% endif %}
+          <!-- {% if product.medium == True %}
+          <p>/M</p>
+          {% endif %}
+          {% if product.Large == True %}
+          <p>/L</p>
+          {% endif %} -->
+          <a href="#" class="btn btn-primary">BuyNow</a>
+        </div>
+</div>
+{% endfor %}
+
+
+
+
+
+{% endblock content %}
